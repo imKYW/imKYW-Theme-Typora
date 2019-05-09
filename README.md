@@ -1,2 +1,2 @@
 # imKYW-Theme-Typora
-Gogs theme for myself
+Typora theme for myself

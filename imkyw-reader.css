@@ -302,11 +302,13 @@ code {
     padding: 1rem;
     font-size: 85%;
     line-height: 1.45;
-    background-color: #f7f7f7;
-    border: 0;
-    border-radius: 3px;
+    background-color: #fbfbfb;
+    border: 1px solid #eee;
+    border-radius: 5px;
     color: #777777;
     margin-top: 0 !important;
+    font-family: "imKYW Code", sans-serif;
+    font-size: 0.9em;
 }
 
 .mathjax-block>.code-tooltip {
