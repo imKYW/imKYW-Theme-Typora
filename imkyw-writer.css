@@ -6,6 +6,7 @@
     --text-color: #B8BFC6;
     --text-strong-color: #D8DFE6;
     --text-weak-color: #888F96;
+    --text-deep-color: #686868;
     --text-link-color: #88B4C2;
     --text-point-color: #A2CFA5;
 
@@ -157,13 +158,25 @@ h6 {
     text-decoration: underline;
     color: var(--text-weak-color);
 }
-p,
+p {
+    margin: 0.8em 0;
+}
 blockquote,
 ul,
 ol,
 dl,
 table{
     margin: 0.5em 0;
+}
+
+blockquote {
+    border-left: 3px solid var(--text-link-color);
+    padding: 0 15px;
+    font-size: 0.9em;
+    color: var(--text-weak-color);
+}
+blockquote blockquote {
+    padding-right: 0;
 }
 
 ul,
@@ -181,16 +194,6 @@ ul > li {
 ol li > *,
 ul li > * {
     color: var(--text-weak-color);
-}
-
-blockquote {
-    border-left: 3px solid var(--text-link-color);
-    padding: 0 15px;
-    font-size: 0.9em;
-    color: var(--text-weak-color);
-}
-blockquote blockquote {
-    padding-right: 0;
 }
 
 table {
@@ -367,10 +370,28 @@ sup.md-footnote {
     padding: 0 3px;
 }
 
-/** Focus Mode */
+/* Focus Mode */
 .on-focus-mode blockquote {
-    border-left-color: rgba(85, 85, 85, 0.12);
+    border-left-color: var(--text-deep-color);
 }
+
+.on-focus-mode ol > li {
+    color: var(--text-deep-color);
+}
+.on-focus-mode ul > li {
+    color: var(--text-deep-color);
+}
+
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) * {
+    color: var(--text-deep-color) !important;
+}
+
+.on-focus-mode .md-focus,
+.on-focus-mode .md-focus-container {
+    color: var(--text-strong-color);
+}
+/* no work : ui li mark underline */
+
 
 header, .context-menu, .megamenu-content, footer{
     font-family: "Segoe UI", "Arial", sans-serif;
