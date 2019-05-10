@@ -74,7 +74,7 @@ body {
     text-shadow: none;
 }
 
-strong:not(mark) {
+strong {
     color: var(--text-strong-color);
 }
 a {
@@ -84,6 +84,7 @@ a {
 mark {
     padding: 0 3px 0 3px;
     background: var(--text-highlight-color);
+    color: #000;
 }
 
 del {
@@ -367,20 +368,30 @@ sup.md-footnote {
     background: var(--bg-deep-color);
     font-family: "imKYW Code";
     font-size: .6em;
-    color : var(--text-weak-color);
+    color: var(--text-weak-color);
     padding: 0 3px;
 }
 
 /* Focus Mode */
-.on-focus-mode blockquote:not(.md-focus):not(.md-focus-container) {
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) * {
+    color: var(--text-deep-color) !important;
+}
+
+.on-focus-mode li[cid]:not(.md-focus):not(.md-focus-container) {
+    color: var(--text-deep-color) !important;
+}
+.on-focus-mode blockquote {
     border-left-color: var(--text-deep-color) !important;
 }
-
-.on-focus-mode mark:not(.md-focus):not(.md-focus-container) {
-    background: var(--bg-line-color) !important;
+.on-focus-mode h5:not(.md-focus):not(.md-focus-container),
+.on-focus-mode h6:not(.md-focus):not(.md-focus-container) {
+    color: var(--text-deep-color) !important;
 }
-
-.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) * {
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) mark {
+    background: var(--bg-line-color);
+}
+.on-focus-mode .md-fences.md-focus .CodeMirror-code>*:not(.CodeMirror-activeline) *,
+.on-focus-mode .CodeMirror.cm-s-inner:not(.CodeMirror-focused) * {
     color: var(--text-deep-color) !important;
 }
 
@@ -388,9 +399,8 @@ sup.md-footnote {
 .on-focus-mode .md-focus-container {
     color: var(--text-strong-color);
 }
-/* no work : ui li underline */
 
-
+/* Side Bar */
 header, .context-menu, .megamenu-content, footer{
     font-family: "Segoe UI", "Arial", sans-serif;
 }
