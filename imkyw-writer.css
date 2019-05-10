@@ -7,8 +7,8 @@
     --text-strong-color: #D8DFE6;
     --text-weak-color: #888F96;
     --text-deep-color: #686868;
-    --text-link-color: #88B4C2;
-    --text-point-color: #A2CFA5;
+    --text-point-color: #88B4C2;
+    --text-highlight-color: #A2CFA5;
 
     --side-bar-bg-color: #2E3033;
     --control-text-color: #B7B7B7;
@@ -69,22 +69,23 @@ body {
 
 *.in-text-selection,
 ::selection {
-    background: #4a89dc;
-    color: #fff;
+    background: #4A89DC;
+    color: #FFF;
     text-shadow: none;
 }
 
-strong {
+strong:not(mark) {
     color: var(--text-strong-color);
 }
 a {
     font-family: imKYW SubFont;
-    color: var(--text-link-color);
+    color: var(--text-point-color);
 }
 mark {
     padding: 0 3px 0 3px;
-    background: var(--text-point-color);
+    background: var(--text-highlight-color);
 }
+
 del {
     color: var(--text-weak-color);
 }
@@ -129,7 +130,7 @@ h6 code {
 h1 {
     padding: .05em 0em .17em .3em;
     font-size: 1.8em;
-    color: #ffffff;
+    color: #FFF;
     line-height: 1.2;
     background-color: var(--bg-deep-color);
     border-top: 1px solid var(--bg-line-color);
@@ -170,7 +171,7 @@ table{
 }
 
 blockquote {
-    border-left: 3px solid var(--text-link-color);
+    border-left: 3px solid var(--text-point-color);
     padding: 0 15px;
     font-size: 0.9em;
     color: var(--text-weak-color);
@@ -193,7 +194,7 @@ ul > li {
 }
 ol li > *,
 ul li > * {
-    color: var(--text-weak-color);
+    color: var(--text-color);
 }
 
 table {
@@ -371,15 +372,12 @@ sup.md-footnote {
 }
 
 /* Focus Mode */
-.on-focus-mode blockquote {
-    border-left-color: var(--text-deep-color);
+.on-focus-mode blockquote:not(.md-focus):not(.md-focus-container) {
+    border-left-color: var(--text-deep-color) !important;
 }
 
-.on-focus-mode ol > li {
-    color: var(--text-deep-color);
-}
-.on-focus-mode ul > li {
-    color: var(--text-deep-color);
+.on-focus-mode mark:not(.md-focus):not(.md-focus-container) {
+    background: var(--bg-line-color) !important;
 }
 
 .on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) * {
@@ -390,7 +388,7 @@ sup.md-footnote {
 .on-focus-mode .md-focus-container {
     color: var(--text-strong-color);
 }
-/* no work : ui li mark underline */
+/* no work : ui li underline */
 
 
 header, .context-menu, .megamenu-content, footer{
