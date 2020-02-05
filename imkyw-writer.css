@@ -1,5 +1,5 @@
 :root {
-    --bg-color:  #363B40;
+    --bg-color:  #1E1E1E;
     --bg-deep-color: #2E3033;
     --bg-light-color: #3A424A;
     --bg-line-color: #494E54;
@@ -16,6 +16,9 @@
     --active-file-bg-color: #444;
     --active-file-border-color: #888;
     --active-file-text-color: #FFF;
+
+    --window-border: 1px solid #555;
+    --search-select-bg-color: #050505;
 }
 
 /* = Fonts Setup = */
@@ -429,4 +432,30 @@ header, .context-menu, .megamenu-content, footer{
 
 .dropdown-menu .divider {
     border-color: #e5e5e5;
+}
+
+/* Preferences */
+.ty-preferences .btn-default {
+    background: #454545;
+    border-color: #111;
+}
+.ty-preferences .btn-default:hover {
+    background: #57616b;
+}
+
+.ty-preferences select {
+    border: 1px solid #999;
+    height: 21px;
+}
+
+.ty-preferences input[type="search"] {
+    border-color: #333;
+    background: #333;
+    line-height: 22px;
+    border-radius: 6px;
+    color: white;
+}
+
+.ty-preferences input[type="search"]:focus {
+    box-shadow: none;
 }
